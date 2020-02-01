@@ -88,3 +88,15 @@ class EventCodeAccess(models.Model):
 
     def __str__(self):  # pragma: no cover
         return EventCodeAccess.__name__
+
+class WindSpeedSensor(models.Model):
+    """This model represents the Wind speed sensor will report
+    a single floating-point value, the speed of the wind as it
+    passes by the driving motorsports vehicle."""
+
+    created_at = models.DateTimeField()
+    # Wind speed panel, measured in miles per hour
+    wind_speed = models.FloatField(default=0)
+
+    def __str__(self):  # pragma: no cover
+        return WindSpeedSensor.__name__

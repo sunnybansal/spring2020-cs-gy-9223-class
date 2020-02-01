@@ -82,6 +82,30 @@
                             </table>
                         </div>
                     </div>
+                    <br>
+                    <div class="sim-panel">
+                        <h4>Fuel Level</h4>
+                        <div class="table-wrapper-scroll-y my-custom-scrollbar">
+                            <table class="table table-bordered table-striped mb-0">
+                                <thead>
+                                <tr bgcolor="#e0efdf">
+                                    <th>ID</th>
+                                    <th>Time</th>
+                                    <th>Fuel Level</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for item in fl_data %}
+                                    <tr>
+                                        <th>{{ item.id }}</th>
+                                        <td>{{ item.created_at }}</td>
+                                        <td>{{ item.current_fuel_level }}</td>
+                                    </tr>
+                                {%  endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="col-lg-6 col-md-6 mb-6">
@@ -145,35 +169,31 @@
                         </div>
 
                     </div>
-                </div>
-            </div>
-            <br>
-            <div class="row" align="center">
-                <div class="col-lg-6 col-md-6 mb-6 col-centered">
+                    <br>
                     <div class="sim-panel">
-                        <h4>Fuel Level</h4>
+                        <h4>Wind Speed</h4>
                         <div class="table-wrapper-scroll-y my-custom-scrollbar">
                             <table class="table table-bordered table-striped mb-0">
                                 <thead>
                                 <tr bgcolor="#e0efdf">
                                     <th>ID</th>
                                     <th>Time</th>
-                                    <th>Fuel Level</th>
+                                    <th>Wind Speed</th>
                                 </tr>
                                 </thead>
                                 <tbody>
-                                {% for item in fl_data %}
+                                {% for item in wss_data %}
                                     <tr>
                                         <th>{{ item.id }}</th>
                                         <td>{{ item.created_at }}</td>
-                                        <td>{{ item.current_fuel_level }}</td>
+                                        <td>{{ item.wind_speed }}</td>
                                     </tr>
                                 {%  endfor %}
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    <br><br>
+                </div>
             </div>
         </div>
     </body>
